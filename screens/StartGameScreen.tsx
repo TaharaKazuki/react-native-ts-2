@@ -1,5 +1,13 @@
+import { useState } from 'react'
+import { TextInput, View } from 'react-native'
+
 const StartGameScreen = () => {
-  return <div>StartGameScreen</div>
+  return (
+    <View>
+      <TextInput />
+      BUTTONS
+    </View>
+  )
 }
 
 export default StartGameScreen
