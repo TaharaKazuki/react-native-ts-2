@@ -6,7 +6,12 @@ import Colors from '../constant/colors'
 const StartGameScreen = () => {
   return (
     <View style={styles.inputContainer}>
-      <TextInput />
+      <TextInput
+        style={styles.numberInput}
+        maxLength={2}
+        keyboardType="number-pad"
+        autoCapitalize="none"
+      />
       <PrimaryButton onPress={() => console.info('通過')}>Reset</PrimaryButton>
       <PrimaryButton onPress={() => console.info('通過')}>
         Confirm
@@ -32,5 +37,16 @@ const styles = StyleSheet.create({
     },
     shadowRadius: 6,
     shadowOpacity: 0.25,
+  },
+  numberInput: {
+    height: 50,
+    width: 50,
+    fontSize: 32,
+    borderBottomColor: Colors.accent500,
+    borderBottomWidth: 2,
+    color: Colors.accent500,
+    marginVertical: 8,
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
 })
