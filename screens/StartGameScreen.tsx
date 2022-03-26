@@ -11,6 +11,7 @@ const StartGameScreen = () => {
         maxLength={2}
         keyboardType="number-pad"
         autoCapitalize="none"
+        autoCorrect={false}
       />
       <PrimaryButton onPress={() => console.info('通過')}>Reset</PrimaryButton>
       <PrimaryButton onPress={() => console.info('通過')}>
