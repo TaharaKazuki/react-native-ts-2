@@ -13,13 +13,17 @@ const StartGameScreen = () => {
         autoCapitalize="none"
         autoCorrect={false}
       />
-      <View style={styles.buttonContainer}>
-        <PrimaryButton onPress={() => console.info('通過')}>
-          Reset
-        </PrimaryButton>
-        <PrimaryButton onPress={() => console.info('通過')}>
-          Confirm
-        </PrimaryButton>
+      <View style={styles.buttonsContainer}>
+        <View style={styles.buttonContainer}>
+          <PrimaryButton onPress={() => console.info('通過')}>
+            Reset
+          </PrimaryButton>
+        </View>
+        <View style={styles.buttonContainer}>
+          <PrimaryButton onPress={() => console.info('通過')}>
+            Confirm
+          </PrimaryButton>
+        </View>
       </View>
     </View>
   )
@@ -56,7 +60,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
-  buttonContainer: {
+  buttonsContainer: {
     flexDirection: 'row',
+  },
+  buttonContainer: {
+    flex: 1,
   },
 })
