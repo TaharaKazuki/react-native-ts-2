@@ -4,7 +4,11 @@ import { TextInput, View, StyleSheet, Alert } from 'react-native'
 import PrimaryButton from '../components/PrimaryButton'
 import Colors from '../constant/colors'
 
-const StartGameScreen = () => {
+type Props = {
+  onPickNumber: (arg: number) => void
+}
+
+const StartGameScreen = ({ onPickNumber }: Props) => {
   const [enteredNumber, setEnteredNumber] = useState<string>('')
 
   const numberInputHandler = (enteredNumber: string) => {
@@ -19,9 +23,9 @@ const StartGameScreen = () => {
     const chosenNumber = parseInt(enteredNumber)
 
     if (isNaN(chosenNumber) || chosenNumber <= 0 || chosenNumber > 99) {
-      Alert.alert('Invalid number', 'Number has to', [
+      Alert.alert('入力が無効です', '1から99の間の数字で予想してください', [
         {
-          text: 'Okay',
+          text: '確認',
           style: 'destructive',
           onPress: resetInputHandler,
         },
@@ -29,6 +33,7 @@ const StartGameScreen = () => {
       return
     }
 
+    onPickNumber(chosenNumber)
     console.info('Valid Number')
   }
 
