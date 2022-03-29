@@ -1,5 +1,11 @@
 import { useState, ReactNode } from 'react'
-import { StyleSheet, Text, View, ImageBackground } from 'react-native'
+import {
+  StyleSheet,
+  Text,
+  View,
+  ImageBackground,
+  SafeAreaView,
+} from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import Colors from './constant/colors'
 
@@ -30,7 +36,7 @@ const App: () => ReactNode = () => {
         style={styles.rootScreen}
         imageStyle={styles.backgroundImage}
       >
-        {screen}
+        <SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
       </ImageBackground>
     </LinearGradient>
   )
